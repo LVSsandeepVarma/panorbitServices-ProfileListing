@@ -20,8 +20,10 @@ export default function ContactsList(){
     },[])
 
     const handleSelectedContact = (obj) =>{
+      console.log(obj)
       dispatch(getUserProfile(obj))
       navigate("/contactBio")
+      console.log(profilesData)
     }
 
     return(

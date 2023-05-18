@@ -22,6 +22,66 @@
   margin-top: 3%;
 }
 
+.sideNavWrapper{
+  display:flex;
+  margin: 5%;
+  height:83vh;
+}
+
+.pro-sidebar{
+  border-radius:25px;
+}
+
+.active {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.sidebarContent{
+  border-bottom: 1px solid white;
+}
+
+.profileComponent{
+  width: 100%;
+  display: block;
+  margin-left: 8%;
+}
+
+.navComponent{
+  width:100%;
+  padding: 10px;
+  height:min-content;
+}
+
+.navHeader{
+  border-bottom: 1px solid cadetblue;
+  font-weight:bolder;
+}
+
+.navbarProfile{
+  width: 40% !important;
+}
+
+.detailComponent{
+  display: flex !important;
+}
+
+.details{
+  color: black !important;
+}
+
+.text-muted{
+  padding:11px;
+}
+
+.verticalDivider{
+  display: flex;
+  border-left: 1px solid black;
+  height: auto;
+  overflow: hidden;
+  margin-left:5%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
