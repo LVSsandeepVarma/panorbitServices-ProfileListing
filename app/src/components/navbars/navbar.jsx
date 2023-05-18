@@ -23,6 +23,7 @@ export default function Header() {
         console.log(profilesData)
     }
     React.useEffect(() => {
+        setCardVisibility(false);
         const indexOfContact = profilesData.findIndex(obj => obj?.name === contactDetails[0]?.name)
         console.log(indexOfContact)
         if (indexOfContact === 0) {

@@ -3,7 +3,8 @@ import Card from "react-bootstrap/Card"
 import { selectedContact } from "../features/profiles/profilesSlice";
 import { useSelector } from "react-redux";
 import { left } from "@popperjs/core";
-
+import MapComponent from './map';
+import "leaflet/dist/leaflet.css"
 export default function DetailedProfile(){
     const contactDetails = useSelector(selectedContact);
 
@@ -29,15 +30,19 @@ export default function DetailedProfile(){
                 </Card>
             </div>
             <div className="verticalDivider"></div>
-            <Card style={{width:"100%"}}>
+            <Card style={{width:"100%", border:"none"}}>
                 <Card.Body>
                     <Card.Title style={{textAlign: left}}>Address :</Card.Title>
                 <Card.Subtitle className="text-muted" >Street: <b className="details">{contactDetails[0]?.address?.street}</b></Card.Subtitle >
                 <Card.Subtitle className="text-muted" >Suite: <b className="details">{contactDetails[0]?.address?.suite}</b></Card.Subtitle >
                 <Card.Subtitle className="text-muted" >City: <b className="details">{contactDetails[0]?.address?.city}</b></Card.Subtitle >
                 <Card.Subtitle className="text-muted" >Zipcode: <b className="details">{contactDetails[0]?.address?.zipcode}</b></Card.Subtitle >
-
-                </Card.Body>
+                <div className="mapWrapper1">
+                    <br></br>
+                    {/* Hello There */}
+                    <MapComponent/>
+             </div>
+            </Card.Body>
             </Card>
         </div>
     )
