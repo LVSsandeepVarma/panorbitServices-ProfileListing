@@ -12,6 +12,7 @@ export default function Profile(){
                     <Header/>
                     <DetailedProfile/>
                 </div>
+                
             </div>
 
         </div>
