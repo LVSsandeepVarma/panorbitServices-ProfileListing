@@ -2,7 +2,7 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from "react-bootstrap/Card"
-import { selectedContact, profilesList, getUserProfile } from "../../features/profiles/profilesSlice";
+import { selectedContact, profilesList, getUserProfile, logoutUser } from "../../features/profiles/profilesSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import ListGroupItem from "react-bootstrap/esm/ListGroupItem";
@@ -53,17 +53,17 @@ export default function Header() {
                 </Container>
             </Navbar>
             {isCardVisible && (
-                <Card style={{ width: '25rem', marginTop: '20px', float: "right", boxShadow: "5px solid" }}>
+                <Card style={{ width: '20rem', marginTop: '20px', float: "right", boxShadow: "5px solid", zIndex:3 }}>
                     <Card.Body className="contactBody">
                         <Card.Img className="rounded-circle navbarProfile " variant="top" src={contactDetails[0]?.profilepicture} alt="profile pic" />
                         <Card.Title>{contactDetails[0]?.name}</Card.Title>
                         <Card.Subtitle className="text-muted" >{contactDetails[0]?.email}</Card.Subtitle >
                         {neighbourContacts.map((obj, key) => (
-                            <ListGroupItem action key={key} className="fs-4 list-group-item list-group-item-action " onClick={() => { handleSelectedContact(obj) }}>
+                            <ListGroupItem action key={key} className="fs-4 list-group-item list-group-item-action " style={{borderBottom: "1px solid grey", margin: "10px", textAlign:"center"}} onClick={() => { handleSelectedContact(obj) }}>
                                 {obj.name}
                             </ListGroupItem>
                         ))}
-                        <Button variant="danger">Sign out</Button>
+                        <Button onClick={()=>{navigate("/");dispatch(logoutUser())}} variant="danger">Sign out</Button>
                     </Card.Body>
                 </Card>
             )}
