@@ -5,13 +5,15 @@ import { useSelector } from "react-redux";
 import { left } from "@popperjs/core";
 import MapComponent from './map';
 import "leaflet/dist/leaflet.css"
-export default function DetailedProfile(){
+import ChatComponent from "./chat";
+
+export default function DetailedProfile() {
     const contactDetails = useSelector(selectedContact);
 
-    return(
-        <div className="detailComponent" style={{background:"none"}}>
+    return (
+        <div className="detailComponent" style={{ background: "none" }}>
             <div>
-                <Card style={{width:"20rem", marginBottom:"10%", border:"none"}}>
+                <Card style={{ width: "20rem", marginBottom: "10%", border: "none" }}>
                     <Card.Body>
                         <Card.Img className="rounded-circle" variant="top" src={contactDetails[0].profilepicture} alt="profile pic" />
                         <Card.Title>{contactDetails[0]?.name}</Card.Title>
@@ -30,20 +32,21 @@ export default function DetailedProfile(){
                 </Card>
             </div>
             <div className="verticalDivider"></div>
-            <Card style={{width:"100%", border:"none"}}>
+            <Card style={{ width: "100%", border: "none" }}>
                 <Card.Body>
-                    <Card.Title style={{textAlign: left}}>Address :</Card.Title>
-                <Card.Subtitle className="text-muted" >Street: <b className="details">{contactDetails[0]?.address?.street}</b></Card.Subtitle >
-                <Card.Subtitle className="text-muted" >Suite: <b className="details">{contactDetails[0]?.address?.suite}</b></Card.Subtitle >
-                <Card.Subtitle className="text-muted" >City: <b className="details">{contactDetails[0]?.address?.city}</b></Card.Subtitle >
-                <Card.Subtitle className="text-muted" >Zipcode: <b className="details">{contactDetails[0]?.address?.zipcode}</b></Card.Subtitle >
-                <div className="mapWrapper1">
-                    <br></br>
-                    {/* Hello There */}
-                    <MapComponent/>
-             </div>
-            </Card.Body>
+                    <Card.Title style={{ textAlign: left }}>Address :</Card.Title>
+                    <Card.Subtitle className="text-muted" >Street: <b className="details">{contactDetails[0]?.address?.street}</b></Card.Subtitle >
+                    <Card.Subtitle className="text-muted" >Suite: <b className="details">{contactDetails[0]?.address?.suite}</b></Card.Subtitle >
+                    <Card.Subtitle className="text-muted" >City: <b className="details">{contactDetails[0]?.address?.city}</b></Card.Subtitle >
+                    <Card.Subtitle className="text-muted" >Zipcode: <b className="details">{contactDetails[0]?.address?.zipcode}</b></Card.Subtitle >
+                    <div className="mapWrapper1">
+                        <br></br>
+                        {/* Hello There */}
+                        <MapComponent />
+                    </div>
+                </Card.Body>
             </Card>
+            <ChatComponent />
         </div>
     )
 }

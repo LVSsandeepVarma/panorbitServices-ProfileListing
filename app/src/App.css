@@ -110,8 +110,73 @@
   font-size: calc(10px + 2vmin);
 }
 
+.dropdownWrapper{
+  bottom: 0px;
+    position: fixed;
+    display: flex;
+    width: 66%;
+    justify-content: end;
+}
+
+.dropdown-toggle{
+  width: 17rem;
+  padding: 5%;
+  text-align: center;
+}
+
+.leaflet-pane{
+  z-index:0 !important;
+}
+
+.dropdown-menu{
+  width: -webkit-fill-available;
+}
+
+.accordion-body{
+  text-align: left;
+}
+
+.accordion-button{
+  background: #0275d8 !important;
+  color: #fff !important;
+  font-weight: bold;
+  padding: 5%;
+  width: 10%;
+}
+
+.leaflet-control, .leaflet-bottom{
+  z-index:0 !important;
+}
+
+.accordion{
+  width: 22%;
+  z-index: 3;
+}
+
 .App-link {
   color: rgb(112, 76, 182);
+}
+
+.collapse,
+.collapsing {
+  overflow: auto;
+  max-height: 50vh;
+}
+
+.commingSoonComponent{
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vw;
+  color: grey;
+  font-weight: bolder;
+}
+
+.chat-contacts{
+  border-bottom: 1px solid grey !important;
+  padding: 5% !important; 
 }
 
 @keyframes App-logo-float {
